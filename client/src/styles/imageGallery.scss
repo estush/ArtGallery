@@ -1,0 +1,66 @@
+.image-gallery {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* תופס את כל הגובה של המסך */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  
+    .gallery {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &.fade-in {
+        opacity: 1;
+      }
+  
+      &.fade-out {
+        opacity: 0;
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* תמלא את כל החלל מבלי לעוות את התמונה */
+      }
+    }
+  
+    .image-info {
+      position: absolute; /* ממקם את הכרטיס מעל התמונה */
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%); /* ממקם את הכרטיס במרכז האופקי */
+      background-color: rgba(0, 0, 0, 0.6); /* רקע כהה עם שקיפות */
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      text-align: center;
+  
+      h2, h3 {
+        margin: 0;
+        color: white;
+      }
+  
+      p {
+        font-size: 14px;
+        color: white;
+        margin-top: 10px;
+      }
+    }
+  }
+  

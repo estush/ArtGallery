@@ -1,0 +1,62 @@
+nav {
+    background-color: #333; // צבע הרקע של הסרגל
+    padding: 10px;
+    display: flex; // הפוך את הסרגל לאלמנט גמיש
+    align-items: center; // מרכז את התוכן על הציר האנכי
+  
+    .nav-content {
+      display: flex; // שים את התוכן בתצוגת flex
+      align-items: center; // מרכז את הלוגו והכרטיסיות
+      width: 100%; // אם תרצה שהתוכן יתפוס את כל רוחב הסרגל
+  
+      img {
+        max-width: 150px; // הגדרת רוחב מקסימלי
+        height: auto; // שמירה על יחס הגובה-רוחב
+        display: block; // כדי למנוע רווחים נוספים
+        margin-right: 15px; // רווח בין הלוגו לכרטיסיות
+      }
+  
+      ul {
+        list-style-type: none; // הסרת הנקודות מהרשימה
+        padding: 0; // ביטול ריפוד
+        margin: 0; // ביטול שוליים
+        display: flex; // הצגת הפריטים בצורה אופקית
+        margin-left: auto; // דחוף את ה-ul לצד ימין
+  
+        li {
+          margin: 0 15px; // רווח בין הפריטים ברשימה
+          position: relative;
+  
+          a {
+            text-decoration: none; // הסרת הקו התחתון על הקישור
+            color: #fff; // צבע הטקסט
+            padding: 5px 10px; // ריפוד סביב הקישור
+            font-family: 'Roboto', sans-serif; // הגדרת הגופן
+            font-size: 22px; // הגדלת גודל הגופן
+            transition: color 0.3s ease; // אנימציה חלקה לצבע
+  
+            &::after {
+              content: ""; // יצירת תוכן ריק
+              position: absolute; // מיקום מוחלט
+              left: 0; // מתחיל מהקצה השמאלי
+              bottom: -5px; // מיקום הקו מתחת לטקסט
+              width: 100%; // רוחב הקו
+              height: 2px; // גובה הקו
+              background-color: #97713f; // צבע הקו
+              transform: scaleX(0); // מתחיל מאפס
+              transition: transform 0.5s ease; // אנימציה חלקה
+            }
+  
+            &:hover {
+              color: #97713f; // צבע הטקסט בריחוף
+              
+              &::after {
+                transform: scaleX(1); // הקו מתהווה מקצה לקצה
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
